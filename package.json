@@ -1,0 +1,29 @@
+{
+  "name": "rlog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zopsmart/rlog-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zopsmart/rlog-api/issues"
+  },
+  "homepage": "https://github.com/zopsmart/rlog-api#readme",
+  "dependencies": {
+    "@types/mysql": "^2.15.21",
+    "google-auth-library": "^8.0.2",
+    "mysql": "^2.18.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.4"
+  }
+}

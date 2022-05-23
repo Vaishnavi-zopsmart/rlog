@@ -1,0 +1,25 @@
+---
+swagger: "3.0.0"
+info:
+  description: "This is a server for Rlog-api"
+  version: "1.0.5"
+  title: "Swagger RLog" 
+
+
+paths:
+  /user/login:
+    post:
+      summary: "Login user after validation"
+      description: ""
+      responses: 
+        201:
+          description: "user logged in"
+        404:
+          description: "unauthorized user"
+  /user/invites:
+    get:
+      summary: "Invite user"
+      description: ""
+      responses: 
+        201:
+          description: "user invited"
