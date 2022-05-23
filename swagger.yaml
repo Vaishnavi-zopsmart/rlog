@@ -1,5 +1,4 @@
----
-swagger: "2.0"
+openapi: 3.0.0
 info:
   description: "This is a server for Rlog-api"
   version: "1.0.5"
