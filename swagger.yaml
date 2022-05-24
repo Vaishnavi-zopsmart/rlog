@@ -12,21 +12,25 @@ paths:
       summary: "Login user after validation"
       description: ""
       parameters:
-      - name : "name"
-        in : "formData"
-        description: "Name of User"
-        required : true
-        type: "string"
-      - name: "emailId"
-        in : "formData"
-        description: "Email id of User"
-        required : true
-        type: "string"        
-      - name: "avatar"
-        in : "formData"
-        description: "Avatar of User"
-        required : true
-        type: "string"        
+        - name : "user"
+          in: "body"
+          schema:
+            $ref: "./src/services/userService.ts"
+      # - name : "name"
+      #   in : "formData"
+      #   description: "Name of User"
+      #   required : true
+      #   type: "string"
+      # - name: "emailId"
+      #   in : "formData"
+      #   description: "Email id of User"
+      #   required : true
+      #   type: "string"        
+      # - name: "avatar"
+      #   in : "formData"
+      #   description: "Avatar of User"
+      #   required : true
+      #   type: "string"        
       # - name: "userAccountDetails"
       #   in : "formData"
       #   description: "Account Details of User"
