@@ -15,7 +15,7 @@ paths:
         - name : "user"
           in: "body"
           schema:
-            $ref: "./src/services/userService.ts"
+            $ref: "#/definitions/User"
       # - name : "name"
       #   in : "formData"
       #   description: "Name of User"
@@ -49,4 +49,21 @@ paths:
       responses: 
         201:
           description: "user invited"
+definitions:
+  User: 
+    type: "object"
+    required:
+      - "name"
+      - "emailId"
+      - "avatar"
+    properties: 
+      name :
+        type: string
+        example: "xyz"
+      emailId:
+        type: string
+      avatar:
+        type: string
+
+      
                     
