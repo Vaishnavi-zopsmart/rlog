@@ -12,30 +12,16 @@ paths:
       summary: "Login user after validation"
       description: ""
       parameters:
-        - name : "user"
+        - name : "Authorization"
+          in : "header"
+          type: "string"
+          required: true
+          description: "Access Token"
+           
+        - name : "user Details"
           in: "body"
           schema:
             $ref: "#/definitions/User"
-      # - name : "name"
-      #   in : "formData"
-      #   description: "Name of User"
-      #   required : true
-      #   type: "string"
-      # - name: "emailId"
-      #   in : "formData"
-      #   description: "Email id of User"
-      #   required : true
-      #   type: "string"        
-      # - name: "avatar"
-      #   in : "formData"
-      #   description: "Avatar of User"
-      #   required : true
-      #   type: "string"        
-      # - name: "userAccountDetails"
-      #   in : "formData"
-      #   description: "Account Details of User"
-      #   required : false   
-      #   type : any    
       responses: 
         201:
           description: "user logged in"
@@ -59,11 +45,10 @@ definitions:
     properties: 
       name :
         type: string
-        example: "xyz"
+        example: "Name"
       emailId:
         type: string
+        example: "myemail@gmail.com"
       avatar:
-        type: string
-
-      
-                    
+        type: string  
+        example: ""                         
