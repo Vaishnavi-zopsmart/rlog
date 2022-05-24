@@ -11,9 +11,31 @@ paths:
     post:
       summary: "Login user after validation"
       description: ""
+      parameters:
+      - name : "name"
+        in : "formData"
+        description: "Name of User"
+        required : true
+        type: "string"
+      - name: "emailId"
+        in : "formData"
+        description: "Email id of User"
+        required : true
+        type: "string"        
+      - name: "avatar"
+        in : "formData"
+        description: "Avatar of User"
+        required : true
+        type: "string"        
+      # - name: "userAccountDetails"
+      #   in : "formData"
+      #   description: "Account Details of User"
+      #   required : false   
+      #   type : any    
       responses: 
         201:
           description: "user logged in"
+          
         404:
           description: "unauthorized user"
   /user/invites:
@@ -23,3 +45,4 @@ paths:
       responses: 
         201:
           description: "user invited"
+                    
