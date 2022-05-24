@@ -37,6 +37,8 @@ paths:
       responses: 
         201:
           description: "user invited"
+          schema:
+            $ref: "#/definitions/AccountDetails"
         401:
           description: "Unauthorized User"
           schema:
@@ -70,17 +72,30 @@ definitions:
   Error: 
     type: "object"
     properties:
-      code: 
-        example: "UNAUTHORIZED"
-      reason:
-        example: "Request was not authorized"
-      datetime: 
-        type: object
+      errors:
+        type: "object"
         properties:
-          value:
-            example: "2022-05-24T09:29:13.177Z"
-          timezone:
-            example: "Asia/Calcutta"
-      rootCause:
-        example: "[]"
-        
+          code: 
+            example: "UNAUTHORIZED"
+          reason:
+            example: "Request was not authorized"
+          datetime: 
+            type: object
+            properties:
+              value:
+                example: "2022-05-24T09:29:13.177Z"
+              timezone:
+                example: "Asia/Calcutta"
+          rootCause:
+            example: "[]"
+  AccountDetails: 
+    type: "object"
+    properties:
+      data:
+        type: "object"
+        properties:
+          UserDetails: 
+            example: "[]"
+          AccountNameInvitation:
+            example: "[]"
+           
