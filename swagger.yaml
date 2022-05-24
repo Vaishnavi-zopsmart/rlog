@@ -18,12 +18,18 @@ paths:
           required: true
           description: "Access Token"
       responses: 
-        201:
-          description: "user logged in"
+        200:
+          description: "If user exists, it returns user after verification "
           schema: 
             $ref: "#/definitions/User"
-        404:
-          description: "unauthorized user"
+        201:
+          description: "If User doesn't exist, it gets created"
+          schema: 
+            $ref: "#/definitions/User"
+        401:
+          description: "Unauthorized User"
+          schema:
+            $ref: "#/definitions/Error"
   /user/invites:
     get:
       summary: "Invite user"
@@ -31,30 +37,50 @@ paths:
       responses: 
         201:
           description: "user invited"
+        401:
+          description: "Unauthorized User"
+          schema:
+            $ref: "#/definitions/Error"
 definitions:
   User: 
     type: "object"
-    required:
-      - "name"
-      - "emailId"
-      - "avatar"
     properties:
-      id :
-        example: "c604765d-6eb8-41df-b960-a43202c2f01d" 
-      name :
-        type: string
-        example: "User Name"
-      emailId:
-        type: string
-        example: "name.lastname@zopsmart.com"
-      image:
-        type: string  
-        example: "https://1h3.googleusercontent.com/a/AATXAJwS4j7VeVOtbysLHrjaD-xh99TRHu-kaHxmOC M=s96-c"             
-      createdOn:
-        type: string
-        example: "2022-05-23T08:26:10.0002"
-      updatedOn:
-        type: string
-        example: "2022-05-23T08:26:10.0002"
-      userAccountDetails: 
+      data:
+        type: "object"
+        properties:
+          id :
+            example: "c604765d-6eb8-41df-b960-a43202c2f01d" 
+          name :
+            type: string
+            example: "User Name"
+          emailId:
+            type: string
+            example: "name.lastname@zopsmart.com"
+          image:
+            type: string  
+            example: "https://1h3.googleusercontent.com/a/AATXAJwS4j7VeVOtbysLHrjaD-xh99TRHu-kaHxmOC M=s96-c"             
+          createdOn:
+            type: string
+            example: "2022-05-23T08:26:10.0002"
+          updatedOn:
+            type: string
+            example: "2022-05-23T08:26:10.0002"
+          userAccountDetails: 
+            example: "[]"
+  Error: 
+    type: "object"
+    properties:
+      code: 
+        example: "UNAUTHORIZED"
+      reason:
+        example: "Request was not authorized"
+      datetime: 
+        type: object
+        properties:
+          value:
+            example: "2022-05-24T09:29:13.177Z"
+          timezone:
+            example: "Asia/Calcutta"
+      rootCause:
         example: "[]"
+        
