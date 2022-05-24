@@ -17,15 +17,11 @@ paths:
           type: "string"
           required: true
           description: "Access Token"
-           
-        - name : "user Details"
-          in: "body"
-          schema:
-            $ref: "#/definitions/User"
       responses: 
         201:
           description: "user logged in"
-          
+          schema: 
+            $ref: "#/definitions/User"
         404:
           description: "unauthorized user"
   /user/invites:
@@ -42,13 +38,23 @@ definitions:
       - "name"
       - "emailId"
       - "avatar"
-    properties: 
+    properties:
+      id :
+        example: "c604765d-6eb8-41df-b960-a43202c2f01d" 
       name :
         type: string
-        example: "Name"
+        example: "User Name"
       emailId:
         type: string
-        example: "myemail@gmail.com"
-      avatar:
+        example: "name.lastname@zopsmart.com"
+      image:
         type: string  
-        example: ""                         
+        example: "https://1h3.googleusercontent.com/a/AATXAJwS4j7VeVOtbysLHrjaD-xh99TRHu-kaHxmOC M=s96-c"             
+      createdOn:
+        type: string
+        example: "2022-05-23T08:26:10.0002"
+      updatedOn:
+        type: string
+        example: "2022-05-23T08:26:10.0002"
+      userAccountDetails: 
+        example: "[]"
