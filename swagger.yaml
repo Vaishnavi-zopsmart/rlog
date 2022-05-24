@@ -19,7 +19,7 @@ paths:
           description: "Access Token"
       responses: 
         200:
-          description: "If user exists, it returns user after verification "
+          description: "If user exists, it returns User UserDetails after verification "
           schema: 
             $ref: "#/definitions/User"
         201:
