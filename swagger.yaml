@@ -34,6 +34,12 @@ paths:
     get:
       summary: "Invite user"
       description: ""
+      parameters:
+        - name : "Authorization"
+          in : "header"
+          type: "string"
+          required: true
+          description: "Access Token"
       responses: 
         201:
           description: "user invited"
